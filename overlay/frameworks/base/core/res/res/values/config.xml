@@ -302,4 +302,7 @@
 
     <!-- Flag indicating if device supports EAP SIM, AKA, AKA' -->
     <bool name="config_eap_sim_based_auth_supported">false</bool>
+    
+    <!-- Declare wireless charging support -->
+    <bool name="config_supportsWirelessCharging">true</bool>
 </resources>
