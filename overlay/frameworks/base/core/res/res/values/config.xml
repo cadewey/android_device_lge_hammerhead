@@ -293,4 +293,6 @@
         <item>hsupa:4094,87380,704512,4096,16384,110208</item>
     </string-array>
 
+    <!-- Declare wireless charging support -->
+    <bool name="config_supportsWirelessCharging">true</bool>
 </resources>
