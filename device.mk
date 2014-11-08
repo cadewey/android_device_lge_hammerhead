@@ -24,7 +24,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 ifeq ($(USE_SVELTE_KERNEL),true)
 LOCAL_KERNEL := device/lge/hammerhead_svelte-kernel/zImage-dtb
 else
-LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-dtb
+LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-ee-dtb
 endif
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
@@ -371,6 +371,24 @@ else
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
 endif
+
+# Some additional stuff
+SUPERUSER_EMBEDDED := true
+
+PRODUCT_PACKAGES += \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.feedback \
+    ro.com.google.locationfeatures=1 \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.kernel.android.checkjni=0 \
+    persist.sys.root_access=3
+
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/bootanimation.zip:system/media/bootanimation.zip
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
