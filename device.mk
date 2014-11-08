@@ -28,7 +28,7 @@ else
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
 LOCAL_KERNEL := device/lge/hammerhead_fp-kernel/zImage-dtb
 else
-LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-dtb
+LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-ee-dtb
 endif
 
 endif
@@ -392,6 +392,18 @@ else
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.feedback \
+    ro.com.google.locationfeatures=1 \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.kernel.android.checkjni=0 \
+    persist.sys.root_access=3
+
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/bootanimation.zip:system/media/bootanimation.zip
 
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
