@@ -368,10 +368,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Some additional stuff
-SUPERUSER_EMBEDDED := true
-
 PRODUCT_PACKAGES += \
-    su
+    Superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
