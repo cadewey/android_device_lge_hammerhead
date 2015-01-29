@@ -374,6 +374,7 @@ endif
 
 # Some additional stuff
 PRODUCT_PACKAGES += \
+    DSPManager \
     Superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
