@@ -156,3 +156,9 @@
 
 # Thermal engine
 /dev/msm_thermal_query            u:object_r:thermal_engine_device:s0
+
+#############
+# Superuser's control sockets
+/dev/com.thirdparty.superuser(/.*)?   u:object_r:superuser_device:s0
+/dev/com.android.settings(/*.)?   u:object_r:superuser_device:s0
+/dev/socket/su-daemon(/.*)?   u:object_r:superuser_device:s0
