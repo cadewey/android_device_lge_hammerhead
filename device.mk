@@ -402,7 +402,7 @@ PRODUCT_PACKAGES += \
 
 # Additional packages
 PRODUCT_PACKAGES += \
-    MusicFX
+    AudioFX
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=1 \
